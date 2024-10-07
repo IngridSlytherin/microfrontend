@@ -1,0 +1,113 @@
+
+.home-container {
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   /* padding: 20px; */
+ }
+ 
+ h2 {
+   text-align: center;
+   font-size: 2em;
+   margin-bottom: 20px;
+ }
+ 
+ /* Estilo para as listas */
+ .home-livros, .home-editoras {
+   list-style-type: none;
+   padding: 0;
+   display: flex;
+   justify-content: space-around;
+ }
+ 
+ .home-livros li, .home-editoras li {
+   flex: 0 0 30%;
+   background-color: #f8f8f8;
+   padding: 10px;
+   text-align: center;
+   border-radius: 5px;
+   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .home-livros li a, .home-editoras li {
+   display: block;
+   margin-bottom: 10px;
+   font-weight: bold;
+   color: #0000EE;
+   text-decoration: none;
+ }
+ 
+ .home-livros li span {
+   display: block;
+   color: #555;
+ }
+ 
+ /* Estilo geral para a página Home */
+ul {
+   list-style-type: none;           /* Remove as bolinhas da lista */
+   padding-left: 0px;               /* Remove o recuo */
+   display: flex;                   /* Exibe os itens em linha */
+   justify-content: space-between;  /* Espaçamento apenas entre os itens */
+   flex-wrap: wrap;                 /* Permite quebra de linha quando necessário */
+   margin: 0;                       /* Remove margens externas */
+   padding: 0 20px;                 /* Adiciona espaçamento interno nas laterais */
+ }
+ 
+ ul li {
+   flex: 0 1 250px;                 /* Limita a largura dos quadrados */
+   text-align: center;
+   padding: 20px;                   /* Adiciona espaçamento interno */
+   margin: 10px;                    /* Espaçamento entre os itens */
+   background-color: #f8f8f8;       /* Cor de fundo dos quadrados */
+   border: 1px solid #000;          /* Borda preta fina */
+   border-radius: 5px;              /* Bordas arredondadas */
+   box-sizing: border-box;          /* Inclui borda e padding no tamanho */
+   transition: all 0.3s ease;       /* Animação suave para hover */
+ }
+ 
+ /* Links dos livros e editoras */
+ ul li a {
+   font-weight: bold;
+   color: #0000EE;                  /* Cor azul para o texto */
+   text-decoration: none;
+   word-wrap: break-word;           /* Quebra de palavras grandes */
+ }
+ 
+ /* Texto dos autores e editoras */
+ ul li span {
+   color: #555;                     /* Cor mais suave para o subtítulo */
+   display: block;
+   margin-top: 10px;                /* Espaçamento superior */
+ }
+ 
+ /* Centralizar os títulos de seções */
+ h2 {
+   text-align: center;
+   font-size: 2em;
+   margin-top: 20px;
+ }
+ 
+ /* Estilo responsivo para telas menores */
+ @media (max-width: 768px) {
+   .home-livros, .home-editoras {
+     flex-direction: column;
+   }
+ 
+   .home-livros li, .home-editoras li {
+     width: 100%;
+     margin-bottom: 20px;
+   }
+
+   ul {
+      flex-direction: column;        /* Exibe os itens em coluna */
+      overflow-x: hidden;            /* Remove a rolagem horizontal */
+    }
+  
+    ul li {
+      width: 100%;
+      max-width: 300px;              /* Limita a largura dos itens em telas menores */
+      margin: 10px auto;             /* Centraliza os itens */
+    }
+  
+ }
+ 

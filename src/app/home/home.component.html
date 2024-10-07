@@ -1,0 +1,17 @@
+<div class="home-container">
+   <h2>Últimos Livros</h2>
+   <ul class="home-livros">
+     <li *ngFor="let livro of livros | slice:0:3">
+       <a [routerLink]="['/livros', livro.id]">{{ livro.title }}</a>
+       <span>{{ livro.author }}</span>
+     </li>
+   </ul>
+ 
+   <h2>Últimas Editoras</h2>
+   <ul class="home-editoras">
+     <li *ngFor="let editora of editoras | slice:0:3">
+       {{ editora.name }}
+     </li>
+   </ul>
+ </div>
+ 

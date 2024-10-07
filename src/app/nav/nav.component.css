@@ -1,0 +1,28 @@
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #007bff;
+  padding: 15px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.nav a:hover {
+  background-color: #0056b3;
+}
+
+/* Menu responsivo */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+  }
+
+  .nav a {
+    margin-bottom: 10px;
+  }
+}

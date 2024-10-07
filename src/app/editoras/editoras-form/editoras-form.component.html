@@ -1,0 +1,21 @@
+<div class="form-container">
+  <h2>{{ editoraId ? 'Editar Editora' : 'Criar Nova Editora' }}</h2>
+
+  <form [formGroup]="editoraForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Nome da Editora:</label>
+      <input id="name" formControlName="name" type="text" placeholder="Digite o nome da editora" />
+      <!-- Exibir mensagem de erro -->
+      <div *ngIf="editoraForm.get('name')?.invalid && editoraForm.get('name')?.touched" class="error">
+        O nome da editora é obrigatório e deve ter no mínimo 3 caracteres.
+      </div>
+    </div>
+
+    <button type="submit">Salvar</button>
+
+    <!-- Exibir mensagem geral de erro ou sucesso -->
+    <div *ngIf="message" class="alert">
+      {{ message }}
+    </div>
+  </form>
+</div>

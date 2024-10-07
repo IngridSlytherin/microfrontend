@@ -1,0 +1,26 @@
+<h2>Lista de Editoras</h2>
+
+<!-- Mensagem de feedback -->
+<div *ngIf="message" class="message">{{ message }}</div>
+
+<ul>
+  <li *ngFor="let editora of editoras">
+    {{ editora.name }}
+    <button (click)="openModal(editora.id)">Excluir</button>
+    <button (click)="onEdit(editora.id)">Editar</button>
+  </li>
+</ul>
+
+<!-- Botão para adicionar nova editora -->
+<a [routerLink]="['/editoras', 'new']">
+  <button class="btn-new-publisher" type="button">Adicionar Nova Editora</button>
+</a>
+
+<!-- Modal de confirmação -->
+<div *ngIf="isModalOpen" class="modal">
+  <div class="modal-content">
+    <h3>Tem certeza que deseja excluir?</h3>
+    <button (click)="confirmDelete()">Sim</button>
+    <button (click)="closeModal()">Não</button>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<h2>Lista de Livros</h2>
+
+<!-- Exibir a mensagem de sucesso -->
+<div *ngIf="message" class="alert alert-success">
+  {{ message }}
+</div>
+
+<ul>
+  <li *ngFor="let livro of livros">
+    <!-- Nome do Livro em cima -->
+    <a [routerLink]="['/livros', livro.id]">{{ livro.title }}</a>
+    <!-- Autor embaixo -->
+    <span>{{ livro.author }}</span>
+
+    <!-- Botão para Editar -->
+    <button (click)="onEdit(livro.id)">Editar</button>
+    <!-- Botão para Excluir -->
+    <button (click)="openModal(livro.id)">Excluir</button>
+  </li>
+</ul>
+
+<!-- Botão para adicionar novo livro -->
+<a [routerLink]="['/livros', 'new']">
+  <button class="btn-new-book" type="button">Adicionar Novo Livro</button>
+</a>
+
+<!-- Modal de confirmação -->
+<div *ngIf="isModalOpen" class="modal">
+  <div class="modal-content">
+    <h3>Tem certeza que deseja excluir?</h3>
+    <button (click)="confirmDelete()">Sim</button>
+    <button (click)="closeModal()">Não</button>
+  </div>
+</div>

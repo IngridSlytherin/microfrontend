@@ -1,0 +1,25 @@
+<h2>{{ livroId ? 'Editar Livro' : 'Adicionar Novo Livro' }}</h2>
+
+<form [formGroup]="livroForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="title">Título:</label>
+    <input id="title" formControlName="title" type="text" placeholder="Digite o título do livro" />
+    <div *ngIf="livroForm.get('title')?.invalid && livroForm.get('title')?.touched" class="error">
+      O título é obrigatório e deve ter no mínimo 3 caracteres.
+    </div>
+  </div>
+
+  <div>
+    <label for="author">Autor:</label>
+    <input id="author" formControlName="author" type="text" placeholder="Digite o autor do livro" />
+    <div *ngIf="livroForm.get('author')?.invalid && livroForm.get('author')?.touched" class="error">
+      O autor é obrigatório e deve ter no mínimo 3 caracteres.
+    </div>
+  </div>
+
+  <button type="submit">{{ livroId ? 'Atualizar Livro' : 'Salvar Livro' }}</button>
+
+  <div *ngIf="message" class="alert">
+    {{ message }}
+  </div>
+</form>
